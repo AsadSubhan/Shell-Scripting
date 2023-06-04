@@ -161,6 +161,7 @@ done
 code
 
 # WHILE LOOP
+<<code
 i=5
 while [ $i -gt 0 ] 
 do 
@@ -169,3 +170,28 @@ do
     sleep 1
 done
 echo "Countdown is Over"
+code
+
+# FUNCTIONS
+<<code
+function hello(){
+    echo "Hello World"
+}
+hello
+code
+
+### 2nd FUNCTION EXAMPLE 
+
+#function adding(){
+#   echo "Sum of $1 and $2 is: $(( $1 + $2 ))"
+#}
+#adding "20" "15"
+#code
+
+# CREATE FOLDER AND WRITE TO A FILE
+<<code
+mkdir hello
+touch hello/world.txt
+echo "Hello World" >> hello/world.txt
+echo "Created a file and folder"
+code
