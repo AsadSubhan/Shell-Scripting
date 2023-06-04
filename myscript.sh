@@ -126,3 +126,46 @@ case "$ANSWER" in
 esac
 code
 
+# SIMPLE FOR LOOP
+<<code
+NAMES="Asad Raheel Ali Sufyan"
+for NAME in $NAMES
+do
+    echo "Hello $NAME!"
+done
+code
+
+# CREATE FILES USING FOR LOOP
+<<code
+for file in {1..5}
+do 
+    echo "File no. $file created!"
+    touch "File-$file.txt"
+done
+code
+
+# RENAME FILES USING FOR LOOP
+# Not able to comment out this line through <<code FILES=$(ls File-*.txt)
+# The $() syntax performs command substitution. It allows the output of a command (ls File-*.txt) 
+# to be captured and assigned to a variable.
+
+#FILES=$(ls File-*.txt)
+<<code
+NEW="ForLoop"
+
+for edit in $FILES
+do  
+    echo "File name changed to: $NEW-$edit"
+    mv "$edit" "$NEW-$edit"
+done
+code
+
+# WHILE LOOP
+i=5
+while [ $i -gt 0 ] 
+do 
+    echo "Countdown ends in: $i"
+    ((i--))
+    sleep 1
+done
+echo "Countdown is Over"
